@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Volumes/data/01 calendar/alg/codeforces/round610/A/main.cpp
+iostream
+-
+cstdio
+-
+vector
+-
+algorithm
+-
+

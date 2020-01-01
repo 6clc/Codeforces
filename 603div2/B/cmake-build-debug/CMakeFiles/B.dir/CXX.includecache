@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Volumes/data/01 calendar/alg/codeforces/603div2/B/main.cpp
+iostream
+-
+cstdlib
+-
+map
+-
+unordered_map
+-
+vector
+-
+algorithm
+-
+set
+-
+

@@ -1,0 +1,3 @@
+/Volumes/data/01 calendar/alg/codeforces/education78/D/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Volumes/data/01 calendar/alg/codeforces/education78/D/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Volumes/data/01 calendar/alg/codeforces/education78/D/cmake-build-debug/CMakeFiles/D.dir
