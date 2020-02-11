@@ -1,39 +1,43 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
+const int INF = 0x3f3f3f3f;
 void solve(){
     string s;
     string t;
     cin >> s >> t;
 
-    vector<vector<int>> mps(26);
-    for(int i=0; i<s.size(); i++){
-        mps[s[i]-'a'].push_back(i);
+    int n = s.size();
+    int m = t.size();
+    int nxt[n+1][26];
+
+    for(int i=0; i<26; i++){
+        nxt[n-1][i] =  INF;
+        nxt[n][i] = INF;
+    }
+    nxt[n-1][s[n-1]-'a'] = n-1;
+
+    for(int i=n-2; i>=0; i--){
+        for(int j=0; j<26; j++){
+            nxt[i][j] = nxt[i+1][j];
+        }
+        nxt[i][s[i]-'a'] = i;
     }
 
-    int j=0;
-    int ret = 1;
-    int cur_ix = -1;
+    int res = 1;
+    for(int i=0, j=0; i<m; i++){
+        int cur = t[i] - 'a';
+        if(nxt[j][cur]==INF){
+            if( j==0 ) {cout << -1 << endl; return;}
+            // cout  <<i << "*" << endl;
+            j = 0;
+            res += 1;
+            if(nxt[j][cur] == INF) {cout << -1 << endl; return;}
+        }
 
-    for(;j<t.size();j++){
-        if(mps[t[j]-'a'].size() == 0) {
-            cout << -1 << endl;
-            return;
-        }
-        int x = t[j] - 'a';
-        bool f=false;
-        for(int i=0; i<mps[x].size(); i++){
-            if(mps[x][i] > cur_ix){
-                cur_ix = mps[x][i];
-                f=true;
-                break;
-            }
-        }
-        if(f) continue;
-        ret += 1;
-        cur_ix = mps[x][0];
+        j = nxt[j][cur]+1;
     }
-    cout << ret << endl;
+    cout << res << endl;
 }
 int main() {
     // std::cout << "Hello, World!" << std::endl;
